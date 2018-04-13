@@ -1,20 +1,20 @@
-<header class="banner">
-    <div class="container">
-        <h1><a class="brand" href="{{ function('home_url', '/') }}">{{ function('bloginfo', 'name') }}</a></h1>
-        <nav class="nav-primary">
-            <ul>
-                {% for item in menu.get_items %}
-                    <li class="nav-main-item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
-                        {% if item.get_children %}
-                            <ul class="nav-drop">
-                                {% for child in item.get_children %}
-                                    <li class="nav-drop-item"><a href="{{child.get_link}}">{{child.title}}</a></li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-            </ul>
-        </nav>
+<header>
+  <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
+  <div class="top-bar" id="top-menu">
+    <div class="top-bar-left">
+        <ul class="menu">
+          <li class="home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo('name'); ?></a></li>
+        </ul>
     </div>
+    <div class="top-bar-right">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <?php if (has_nav_menu('primary_navigation')) :?>
+          <?php wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'container' => '', 'items_wrap' => '%3$s', 'walker' => new Roots\Sage\Extras\Foundation_Nav_Menu()]);?>
+        <?php endif;?>
+      </ul>
+    </div>
+  </div>
 </header>

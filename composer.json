@@ -1,12 +1,12 @@
 {
-  "name": "rabota/sage-twig-theme",
-  "description": "Starter theme - mix of Sage and Timber theme",
+  "name": "kujain/sage-foundation-twig-theme",
+  "description": "Starter theme - mix of Sage Foundation Timber theme",
   "type":"wordpress-theme",
   "minimum-stability" : "stable",
   "authors": [
       {
-          "name": "Vincent Kranenodnk",
-          "email": "kranendonk.vincent@gmail.com"
+          "name": "kujain",
+          "email": "kunal@visionstream.com"
       }
   ],
   "extra": {
