@@ -37,7 +37,7 @@ article.sticky{
 
 // Captions
 .wp-caption {
-  @extend .thumbnail;
+  // @extend .thumbnail;
   line-height: normal;
 }
 .wp-caption-text {
